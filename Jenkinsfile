@@ -5,13 +5,14 @@ pipeline {
 
         stage('Clone') {
             steps {
-               git branch: 'main', url: 'https://github.com/Gilangbayu08/FormRegister.git'
+                git branch: 'main', url: 'https://github.com/Gilangbayu08/FormRegister.git'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Build process running'
+                sh 'ls -la'
             }
         }
 
