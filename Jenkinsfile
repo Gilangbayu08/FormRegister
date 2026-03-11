@@ -9,16 +9,22 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Install Dependency') {
             steps {
-                echo 'Build process running'
-                sh 'ls -la'
+                sh 'composer install'
+            }
+        }
+
+        stage('Setup Laravel') {
+            steps {
+                sh 'cp .env.example .env'
+                sh 'php artisan key:generate'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying project'
+                sh 'php artisan serve --host=0.0.0.0 --port=8000 &'
             }
         }
 
