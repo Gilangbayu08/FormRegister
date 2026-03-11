@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Gilangbayu08/FormRegister.git'
-            }
-        }
-
         stage('Install Dependency') {
             steps {
                 sh 'composer install'
