@@ -3,21 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
+        stage('Clone') {
             steps {
-                git branch: 'main', url: 'https://github.com/Gilangbayu08/FormRegister.git'
+                git branch: 'main', url: 'git@github.com:Gilangbayu08/FormRegister.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building Project...'
+                echo 'Build process running'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying Project...'
+                echo 'Deploying project'
             }
         }
 
