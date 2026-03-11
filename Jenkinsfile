@@ -26,12 +26,6 @@ pipeline {
             }
         }
 
-        stage('Database Migration') {
-            steps {
-                sh 'php artisan migrate --force'
-            }
-        }
-
         stage('Optimize Laravel') {
             steps {
                 sh '''
