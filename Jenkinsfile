@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git branch: 'main', url: 'git@github.com:Gilangbayu08/FormRegister.git'
+               git branch: 'main', url: 'https://github.com/Gilangbayu08/FormRegister.git'
             }
         }
 
